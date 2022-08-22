@@ -1,3 +1,74 @@
+<script>
+	import WeekRecord from '../components/WeekRecord.svelte';
+
+	const mockRecord = [
+		{
+			week: 1,
+			status: 'W'
+		},
+		{
+			week: 2,
+			status: 'L'
+		},
+		{
+			week: 3,
+			status: 'T'
+		},
+		{
+			week: 4,
+			status: 'L'
+		},
+		{
+			week: 5,
+			status: 'W'
+		},
+		{
+			week: 6,
+			status: 'W'
+		},
+		{
+			week: 7,
+			status: 'W'
+		},
+		{
+			week: 8,
+			status: 'W'
+		},
+		{
+			week: 9,
+			status: 'W'
+		},
+		{
+			week: 10,
+			status: 'W'
+		},
+		{
+			week: 11,
+			status: ' '
+		},
+		{
+			week: 12,
+			status: ' '
+		},
+		{
+			week: 13,
+			status: ' '
+		},
+		{
+			week: 14,
+			status: ' '
+		},
+		{
+			week: 15,
+			status: ' '
+		},
+		{
+			week: 16,
+			status: ' '
+		}
+	];
+</script>
+
 <div class="flex flex-row mt-5">
 	<div class="basis-1/4" />
 	<div class="basis-1/2">
@@ -15,100 +86,9 @@
 </div>
 
 <ul class="list-none mt-5 mx-2">
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 1:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 2:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 3:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 4:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 5:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 6:</div>
-			<div>❌</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 7:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 8:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 9:</div>
-			<div>✔️</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 10:</div>
-			<div>❌</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 11:</div>
-			<div>➖</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 12:</div>
-			<div>➖</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 13:</div>
-			<div>➖</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 14:</div>
-			<div>➖</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 15:</div>
-			<div>➖</div>
-		</div>
-	</li>
-	<li>
-		<div class="font-bold bg-white rounded-sm m-1 shadow-md p-2 grid grid-cols-5">
-			<div>Week 16:</div>
-			<div>➖</div>
-		</div>
-	</li>
+	{#each mockRecord as record}
+		<li>
+			<WeekRecord week={record.week} status={record.status} />
+		</li>
+	{/each}
 </ul>
